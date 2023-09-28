@@ -59,7 +59,7 @@ function preload() {
   fillTextureArray();
 }
 
-window.addEventListener("resize", adjustLayout);
+// window.addEventListener("resize", adjustLayout);
 
 function adjustLayout() {
   location.reload();

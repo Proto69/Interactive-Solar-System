@@ -14,8 +14,6 @@ let asteroidsCount = 600;
 let aMin = 0.4;
 let aMax = 1.5;
 
-let a = 0;
-
 // Buttons
 
 let pauseButton;
@@ -63,21 +61,11 @@ function preload() {
 
 function adjustLayout() {
   location.reload();
- // canvasWidth = window.innerWidth;
- // canvasHeight = window.innerHeight;
- // a = 1;
- // setup();
- // a = 0;
- // console.log(`Screen width: ${canvasWidth}, Screen height: ${canvasHeight}`);
 }
 
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight, WEBGL);
-  if (a != 0)
-  {
-    deleteControlPanel(); 
-  }
   drawControlPanel();
   generateStars(starsNum);
 
@@ -214,13 +202,6 @@ function drawControlPanel() {
   drawPauseButton();
 }
 
-function deleteControlPanel() {
-  deleteSliders();
-  deleteResetButtons();
-  deleteLabels();
-  deletePauseButton();
-}
-
 function generateStars(numStars) {
   for (let i = 0; i < numStars; i++) {
     let theta = random(0, TWO_PI); // Random angle in spherical coordinates
@@ -256,27 +237,4 @@ function drawAsteroids() {
     asteroidsArray[i].show();
     asteroidsArray[i].orbit(sliderGroup[6].value());
   }
-}
-
-
-function deleteSliders() {
-  for (let i = 0; i < 7; i++) {
-      sliderGroup[i].remove();
-  }
-}
-
-function deleteResetButtons() {
-  for (let i = 0; i < 7; i++) {
-    resetButtons[i].remove();
-  }
-}
-
-function deleteLabels() {
-  for (let i = 0; i < labels.length; i++) {
-    labels[i].remove();
-  }
-}
-
-function deletePauseButton() {
-  pauseButton.remove();
 }

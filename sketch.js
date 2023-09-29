@@ -76,6 +76,7 @@ function draw() {
   background(0);
   drawStars();
   drawAsteroids();
+  
   sun.show();
   sun.orbit(sliderGroup[6].value());
   cameraView();
@@ -128,10 +129,12 @@ function spawnAsteroids() {
 }
 
 function drawPauseButton() {
+      //TO DO: add max value for the width and space them further away
+
   pauseButton = createButton("Pause/Play");
-  pauseButton.position(1025, height + 80);
+  pauseButton.position(1030, height + 80);
   pauseButton.style(
-    "height: 120px; width: 475px; align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 140px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
+    "height: 120px; width: 23.7%; align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 140px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
   
   pauseButton.mousePressed(isPlaying);
 }
@@ -141,6 +144,8 @@ function isPlaying() {
 }
 
 function drawSliders() {
+      //TO DO: add max value for the width and space them further away
+
   for (let i = 0; i < 7; i++) {
     if (i == 2) {
       sliderGroup[i] = createSlider(-4000, 4000, 2000);
@@ -152,19 +157,21 @@ function drawSliders() {
     } else if (i >= 3 && i != 6) {
       sliderGroup[i].position(525, height + (i - 3) * 75 + 37);
     } else if (i == 6) {
-      sliderGroup[i].position(1025, height + (i - 6) * 75 + 37);
+      sliderGroup[i].position(1030, height + (i - 6) * 75 + 37);
     }
     h = map(i, 0, 6, 5, 85);
-    sliderGroup[i].style("width: 350px; height: 20px;");
+    sliderGroup[i].style("width: 17%; height: 20px;");
   }
 }
 
 function drawResetButtons() {
+      //TO DO: add max value for the width and space them further away
+
   for (let i = 0; i < 7; i++) {
     resetButtons[i] = createButton("Reset");
     resetButtons[i].style(
-      "align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 100px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
-    resetButtons[i].style("width: 100px; height: 48px");
+      "align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 60px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
+    resetButtons[i].style("width: 6%; height: 48px");
     if (i < 3) {
       resetButtons[i].position(395, height + i * 75 + 5);
     } else if (i >= 3 && i != 6) {
@@ -177,16 +184,17 @@ function drawResetButtons() {
 }
 
 function drawLabels() {
-  
+      //TO DO: add max value for the width and space them further away
+
   for (let i = 0; i < 7; i++) {
     let label = createP(sliderLabels[i]);
 
     if (i < 3) {
-      label.position(155, height + i * 75 - 20);
+      label.position(window.innerWidth * 0.096, height + i * 75 - 20);
     } else if (i >= 3 && i != 6) {
       label.position(655, height + (i - 3) * 75 - 20);
     } else {
-      label.position(1125, height + (i - 6) * 75 - 20);
+      label.position(1150, height + (i - 6) * 75 - 20);
     }
 
     label.style("color: white; font-size: 24px;");

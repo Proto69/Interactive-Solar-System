@@ -131,8 +131,7 @@ function drawPauseButton() {
   pauseButton = createButton("Pause/Play");
   pauseButton.position(1025, height + 80);
   pauseButton.style(
-    "height: 120px; width: 475px; border-radius: 25px; background: #59C7B4; font-size: 48px; font-family: Palatino Linotype;"
-  );
+    "height: 120px; width: 475px; align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 140px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
   
   pauseButton.mousePressed(isPlaying);
 }
@@ -164,8 +163,8 @@ function drawResetButtons() {
   for (let i = 0; i < 7; i++) {
     resetButtons[i] = createButton("Reset");
     resetButtons[i].style(
-      "font-family: Palatino Linotype; background: #59C7B4; border-radius: 5px; height: 48px; width: 100px; font-size: 30px"
-    );
+      "align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 100px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
+    resetButtons[i].style("width: 100px; height: 48px");
     if (i < 3) {
       resetButtons[i].position(395, height + i * 75 + 5);
     } else if (i >= 3 && i != 6) {

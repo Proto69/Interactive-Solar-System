@@ -129,12 +129,12 @@ function spawnAsteroids() {
 }
 
 function drawPauseButton() {
-      //TO DO: add max value for the width and space them further away
+      //TO DO: add max value for the width
 
   pauseButton = createButton("Pause/Play");
-  pauseButton.position(1030, height + 80);
+  pauseButton.position(window.innerWidth * 0.646, height + 80);
   pauseButton.style(
-    "height: 120px; width: 23.7%; align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 140px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
+    "height: 120px; width: 24%; align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 250%; justify-content: center; line-height: 1em; max-width: 100%; min-width: 140px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
   
   pauseButton.mousePressed(isPlaying);
 }
@@ -144,7 +144,7 @@ function isPlaying() {
 }
 
 function drawSliders() {
-      //TO DO: add max value for the width and space them further away
+      //TO DO: add max value for the width
 
   for (let i = 0; i < 7; i++) {
     if (i == 2) {
@@ -153,11 +153,11 @@ function drawSliders() {
       sliderGroup[i] = createSlider(-4000, 4000, 0);
     }
     if (i < 3) {
-      sliderGroup[i].position(25, height + i * 75 + 37);
+      sliderGroup[i].position(window.innerWidth * 0.106, height + i * 75 + 37);
     } else if (i >= 3 && i != 6) {
-      sliderGroup[i].position(525, height + (i - 3) * 75 + 37);
+      sliderGroup[i].position(window.innerWidth * 0.376, height + (i - 3) * 75 + 37);
     } else if (i == 6) {
-      sliderGroup[i].position(1030, height + (i - 6) * 75 + 37);
+      sliderGroup[i].position(window.innerWidth * 0.646, height + (i - 6) * 75 + 37);
     }
     h = map(i, 0, 6, 5, 85);
     sliderGroup[i].style("width: 17%; height: 20px;");
@@ -165,39 +165,39 @@ function drawSliders() {
 }
 
 function drawResetButtons() {
-      //TO DO: add max value for the width and space them further away
+      //TO DO: add max value for the width
 
   for (let i = 0; i < 7; i++) {
     resetButtons[i] = createButton("Reset");
     resetButtons[i].style(
-      "align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 20px; justify-content: center; line-height: 1em; max-width: 100%; min-width: 60px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
+      "align-items: center; background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB); border: 0; border-radius: 8px; box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px; box-sizing: border-box; color: #FFFFFF; display: flex; font-family: Phantomsans, sans-serif; font-size: 150%; justify-content: center; line-height: 1em; max-width: 100%; min-width: 60px; padding: 3px; text-decoration: none; user-select: none; -webkit-user-select: none; touch-action: manipulation; white-space: nowrap; cursor: pointer;");
     resetButtons[i].style("width: 6%; height: 48px");
     if (i < 3) {
-      resetButtons[i].position(395, height + i * 75 + 5);
+      resetButtons[i].position(window.innerWidth * 0.286, height + i * 75 + 5);
     } else if (i >= 3 && i != 6) {
-      resetButtons[i].position(895, height + (i - 3) * 75 + 5);
+      resetButtons[i].position(window.innerWidth * 0.556, height + (i - 3) * 75 + 5);
     } else if (i == 6) {
-      resetButtons[i].position(1395, height + (i - 6) * 75 + 5);
+      resetButtons[i].position(window.innerWidth * 0.826, height + (i - 6) * 75 + 5);
     }
     resetButtons[i].mousePressed(resetSlider(i));
   }
 }
 
 function drawLabels() {
-      //TO DO: add max value for the width and space them further away
+      //TO DO: add max value for the width
 
   for (let i = 0; i < 7; i++) {
     let label = createP(sliderLabels[i]);
 
     if (i < 3) {
-      label.position(window.innerWidth * 0.096, height + i * 75 - 20);
+      label.position(window.innerWidth * 0.166, height + i * 75 - 20);
     } else if (i >= 3 && i != 6) {
-      label.position(655, height + (i - 3) * 75 - 20);
+      label.position(window.innerWidth * 0.446, height + (i - 3) * 75 - 20);
     } else {
-      label.position(1150, height + (i - 6) * 75 - 20);
+      label.position(window.innerWidth * 0.708, height + (i - 6) * 75 - 20);
     }
 
-    label.style("color: white; font-size: 24px;");
+    label.style("color: white; font-size: 150%;");
     labels.push(label);
   }
 }

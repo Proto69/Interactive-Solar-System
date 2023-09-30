@@ -190,11 +190,11 @@ function drawLabels() {
     let label = createP(sliderLabels[i]);
 
     if (i < 3) {
-      label.position(window.innerWidth * 0.166, height + i * 75 - 20);
+      label.position(window.innerWidth * 0.106, height + i * 75 - 20);
     } else if (i >= 3 && i != 6) {
-      label.position(window.innerWidth * 0.446, height + (i - 3) * 75 - 20);
+      label.position(window.innerWidth * 0.376, height + (i - 3) * 75 - 20);
     } else {
-      label.position(window.innerWidth * 0.708, height + (i - 6) * 75 - 20);
+      label.position(window.innerWidth * 0.646, height + (i - 6) * 75 - 20);
     }
 
     label.style("color: white; font-size: 150%;");
